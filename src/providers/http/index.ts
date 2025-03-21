@@ -355,8 +355,9 @@ const HTTP_PROVIDER: Provider<'http'> = {
 						throw new Error(`Duplicate parameter ${paramName}`)
 					}
 
+					const salt = process.env.SALT || ''
 					if(convertedUnsafeHash) {
-						extractedParams[paramName] = utils.keccak256(strToUint8Array(groups[paramName]))
+						extractedParams[paramName] = utils.keccak256(strToUint8Array(salt + groups[paramName]))
 					} else {
 						extractedParams[paramName] = groups[paramName]
 					}

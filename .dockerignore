@@ -1,4 +1,15 @@
 node_modules
+npm-debug.log
+dist
+.git
+.gitignore
+.env*
+*.md
+.vscode
+.idea
+*.log
+tmp
+temp
 /lib
 browser/resources
 example-local
